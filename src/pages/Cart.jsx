@@ -28,7 +28,7 @@ const Cart = () => {
               <img src={item.image} alt={item.title} />
               <div className="cart-info">
                 <h4>{item.title}</h4>
-                <p>${item.price}</p>
+                <p>₹  {item.price}</p>
                 <div className="quantity-controls">
                   <button onClick={() => updateQuantity(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
                   <span>{item.quantity}</span>
@@ -43,7 +43,7 @@ const Cart = () => {
 
       {cart.length > 0 && (
         <div className="cart-summary">
-          <h3>Total: ${totalPrice}</h3>
+          <h3>Total: ₹ {totalPrice}</h3>
           <button className="checkout-btn" onClick={handleCheckout}>Checkout</button>
         </div>
       )}

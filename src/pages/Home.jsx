@@ -9,6 +9,8 @@ const Home = () => {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -16,6 +18,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        setAllProducts(data);
         setLoading(false);
       })
       .catch((err) => {
@@ -42,9 +45,27 @@ const Home = () => {
     setFilteredCategory(category);
   };
 
+  const handleSearch = (term) => {
+    setSearchQuery(term);
+
+    const filtered = allProducts.filter((product) =>
+      product.title.toLowerCase().includes(term.toLowerCase())
+    );
+
+    setProducts(filtered);
+  };
+
   return (
     <div className="home">
       <div className="filter-bar">
+        <input
+          type="text"
+          placeholder="Search products  ..."
+          value={searchQuery}
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
+        />
         <select
           value={filteredCategory}
           onChange={(e) => handleCategoryChange(e.target.value)}

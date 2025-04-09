@@ -1,6 +1,6 @@
 :root {
-  --primary: #ff6f61;        /* Accent color */
-  --bg: #f9f9f9;             /* Page background */
+  --primary: #ff6f61;
+  --bg: #f9f9f9;
   --text: #333;
   --card-bg: #fff;
   --shadow: rgba(0, 0, 0, 0.06);
@@ -13,13 +13,15 @@
   min-height: 100vh;
 }
 
-/* Filter dropdown */
+/* Filter Bar - mobile-first */
 .filter-bar {
   margin-bottom: 1rem;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
+.filter-bar input,
 .filter-bar select {
   padding: 0.6rem 1rem;
   border-radius: 8px;
@@ -27,18 +29,23 @@
   font-size: 1rem;
   background-color: #fff;
   color: var(--text);
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.filter-bar select:hover {
-  border-color: var(--primary);
+.filter-bar input::placeholder {
+  color: #aaa;
 }
 
-/* Product grid */
+.filter-bar select:hover,
+.filter-bar input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Product Grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
 
@@ -61,7 +68,6 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Product image */
 .product-card img {
   width: 100%;
   max-height: 140px;
@@ -69,7 +75,6 @@
   margin-bottom: 1rem;
 }
 
-/* Product title */
 .product-card h4 {
   font-size: 0.95rem;
   margin: 0.5rem 0;
@@ -77,7 +82,6 @@
   font-weight: 500;
 }
 
-/* Product price */
 .product-card p {
   color: var(--primary);
   font-weight: bold;
@@ -85,7 +89,7 @@
   margin-top: 0.25rem;
 }
 
-/* Loading skeleton */
+/* Loading Skeleton */
 .skeleton-card {
   background: #f0f0f0;
   border-radius: 12px;
@@ -122,6 +126,7 @@
   }
 }
 
+/* Error Message */
 .error-message {
   color: red;
   text-align: center;
@@ -129,16 +134,27 @@
   font-weight: bold;
 }
 
-
-
-/* Responsive tweaks */
+/* Responsive Tweaks for tablets and up */
 @media (min-width: 600px) {
   .home {
     padding: 1.5rem;
   }
 
   .filter-bar {
-    margin-bottom: 1.5rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .filter-bar input,
+  .filter-bar select {
+    width: auto;
+    flex: 1;
+    max-width: 300px;
+  }
+
+  .filter-bar input {
+    margin-right: 1rem;
   }
 
   .product-grid {
