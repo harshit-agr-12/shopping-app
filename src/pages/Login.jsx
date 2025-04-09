@@ -5,8 +5,8 @@ import '../styles/Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('mor_2314');
-  const [password, setPassword] = useState('83r5^_');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
