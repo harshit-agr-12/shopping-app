@@ -25,6 +25,7 @@ A responsive e-commerce front-end built with **React.js** and powered by the [Fa
 Clone the repository and install dependencies:
 
 git clone https://github.com/your-username/react-shopping-site.git
+
 cd react-shopping-site
 
 npm install
@@ -35,5 +36,6 @@ npm run dev
 For demo purposes:
 
   "username": "mor_2314",
+  
   "password": "83r5^_"
 
