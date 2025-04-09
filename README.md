@@ -1,12 +1,37 @@
-# React + Vite
+# 🛍️ React Shopping Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive e-commerce front-end built with **React.js** and powered by the [Fake Store API](https://fakestoreapi.com). Users can browse products, filter by category, search by name, and view detailed information about each item.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ View all products
+- ✅ Filter by category
+- ✅ Search bar with real-time filtering
+- ✅ Product detail page
+- ✅ Add to cart functionality (context-based)
+- ✅ Skeleton loaders for smooth UX
+- ✅ Responsive and mobile-first design
 
-## Expanding the ESLint configuration
+## 📦 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js** (Functional Components + Hooks)
+- **React Router**
+- **Context API** (Cart Management)
+- **CSS3** (Modular and responsive)
+- **Fake Store API** (RESTful product data)
+
+## 🔧 Installation
+
+Clone the repository and install dependencies:
+
+git clone https://github.com/your-username/react-shopping-site.git
+cd react-shopping-site
+npm install
+npm run dev
+
+🧪 Test Login Credentials
+For demo purposes:
+
+  "username": "mor_2314",
+  "password": "83r5^_"
+
