@@ -58,6 +58,8 @@ const Home = () => {
         </select>
       </div>
 
+      {error && <div className="error-message">{error}</div>}
+
       {loading ? (
         <div className="product-grid">
           {Array.from({ length: 8 }).map((_, index) => (

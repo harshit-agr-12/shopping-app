@@ -129,6 +129,17 @@
   border-radius: 8px;
 }
 
+.error-message {
+  text-align: center;
+  color: red;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background-color: #ccc;
+}
+
+
 @keyframes shimmer {
   0% {
     background-position: -400px 0;

@@ -1,13 +1,10 @@
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import '../styles/Header.css';
 
 const Header = () => {
   const {totalItems} = useCart();
-  const location = useLocation();
   const navigate = useNavigate();
-
-  if (location.pathname === '/login') return null;
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -17,7 +14,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">🛍️ ShopEase</Link>
+        <Link to="/">🛍️ ShopEasy</Link>
       </div>
 
       <nav className="nav-links">
