@@ -1,0 +1,140 @@
+:root {
+  --primary: #ff6f61;        /* Accent color */
+  --bg: #f9f9f9;             /* Page background */
+  --text: #333;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.06);
+  --border: #ddd;
+}
+
+.home {
+  padding: 1rem;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* Filter dropdown */
+.filter-bar {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filter-bar select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-bar select:hover {
+  border-color: var(--primary);
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+/* Product Card */
+.product-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Product image */
+.product-card img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* Product title */
+.product-card h4 {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Product price */
+.product-card p {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.05rem;
+  margin-top: 0.25rem;
+}
+
+/* Loading skeleton */
+.skeleton-card {
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 1rem;
+  animation: pulse 1.2s infinite ease-in-out;
+  height: 220px;
+}
+
+.skeleton-img {
+  width: 100%;
+  height: 140px;
+  background: #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-line {
+  height: 14px;
+  width: 80%;
+  background: #ddd;
+  margin: 6px 0;
+  border-radius: 6px;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #f0f0f0;
+  }
+  50% {
+    background-color: #e0e0e0;
+  }
+  100% {
+    background-color: #f0f0f0;
+  }
+}
+
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  .home {
+    padding: 1.5rem;
+  }
+
+  .filter-bar {
+    margin-bottom: 1.5rem;
+  }
+
+  .product-grid {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}

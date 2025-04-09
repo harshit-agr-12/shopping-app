@@ -1,0 +1,158 @@
+:root {
+  --primary: #ff6f61;
+  --bg: #f9f9f9;
+  --text: #333;
+  --card-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.06);
+  --border: #ddd;
+  --btn-bg: #007bff;
+  --btn-hover: #0056b3;
+}
+
+.product-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+/* Image section */
+.image-section {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.image-section img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Info section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.info-section h2 {
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.info-section .category {
+  font-style: italic;
+  color: gray;
+}
+
+.info-section .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.info-section .description {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Add to cart button */
+.info-section button {
+  padding: 0.8rem 1rem;
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info-section button:hover {
+  background-color: var(--btn-hover);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e4e4e4 37%, #f0f0f0 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 8px;
+}
+
+.skeleton-box {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #e4e4e4;
+  border-radius: 12px;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.skeleton-price {
+  height: 20px;
+  width: 40%;
+  margin-bottom: 1rem;
+}
+
+.skeleton-text {
+  height: 14px;
+  width: 90%;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text.short {
+  width: 50%;
+}
+
+.skeleton-button {
+  width: 150px;
+  height: 40px;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .product-detail-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .image-section img {
+    width: 300px;
+  }
+
+  .info-section {
+    max-width: 500px;
+    flex: 1;
+  }
+}
